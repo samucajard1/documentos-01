@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.git/
+src/database/
+src/static/uploads/
+.env
+README.md
+*.md
+

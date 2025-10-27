@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrières Airbus France - Rejoignez l'Innovation Aérospatiale</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="G6xAQPV6FlXk.png" alt="Airbus" class="logo">
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#accueil" class="nav-link">Accueil</a>
+                    <a href="#offres" class="nav-link">Offres d'emploi</a>
+                    <a href="#entreprise" class="nav-link">L'entreprise</a>
+                    <a href="#avantages" class="nav-link">Avantages</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Rejoignez l'avenir de l'aérospatiale</h1>
+                <p class="hero-subtitle">Découvrez des opportunités exceptionnelles chez Airbus France, leader mondial de l'innovation aéronautique et spatiale</p>
+                <div class="hero-buttons">
+                    <a href="#offres" class="btn btn-primary">Voir les offres</a>
+                    <a href="#entreprise" class="btn btn-secondary">Découvrir Airbus</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="E3mE36tx5n6I.jpg" alt="Siège Airbus Toulouse" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50,000+</div>
+                    <div class="stat-label">Employés en France</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Sites principaux</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Divisions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">70+</div>
+                    <div class="stat-label">Ans d'innovation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Offers Section -->
+    <section id="offres" class="jobs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Offres d'emploi</h2>
+                <p class="section-subtitle">Découvrez nos opportunités dans différents domaines</p>
+            </div>
+            
+            <!-- Job Filters -->
+            <div class="job-filters">
+                <button class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="ingenierie">Ingénierie</button>
+                <button class="filter-btn" data-filter="production">Production</button>
+                <button class="filter-btn" data-filter="support">Support</button>
+            </div>
+
+            <!-- Job Carousel -->
+            <div class="job-carousel">
+                <div class="job-carousel-container" id="job-carousel">
+                    <!-- Jobs will be loaded here dynamically -->
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" id="prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" id="next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="entreprise" class="company">
+        <div class="container">
+            <div class="company-content">
+                <div class="company-text">
+                    <h2 class="section-title">Airbus en France</h2>
+                    <p class="company-description">
+                        Avec plus de 50 000 employés, la France héberge le siège social d'Airbus. 
+                        Nous sommes l'un des plus grands employeurs du secteur aérospatial dans le pays, 
+                        présents sur tout le territoire national avec nos trois sites principaux.
+                    </p>
+                    <div class="company-locations">
+                        <div class="location">
+                            <h3>Toulouse</h3>
+                            <p>Siège social et principales lignes d'assemblage pour les avions commerciaux</p>
+                        </div>
+                        <div class="location">
+                            <h3>Marignane</h3>
+                            <p>Principal site d'Airbus Helicopters dans le monde</p>
+                        </div>
+                        <div class="location">
+                            <h3>Paris</h3>
+                            <p>Sites d'exploitation des divisions Helicopters et Defence and Space</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="company-image">
+                    <img src="SS8b6vmxDTka.jpg" alt="Employés Airbus" class="company-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="avantages" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Les avantages Airbus</h2>
+                <p class="section-subtitle">Découvrez pourquoi rejoindre notre équipe</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3>Santé & Bien-être</h3>
+                    <p>Couverture santé complète, soins dentaires et visuels pour vous et votre famille</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Avantages Financiers</h3>
+                    <p>Salaires compétitifs, plans de retraite et options d'achat d'actions</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Formation Continue</h3>
+                    <p>Programmes de formation, mentorat et opportunités de progression de carrière</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Équilibre Vie Pro/Perso</h3>
+                    <p>Horaires flexibles, télétravail et congés payés généreux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Modal -->
+    <div id="application-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Postuler à l'offre</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="application-form" enctype="multipart/form-data">
+                <input type="hidden" id="job-id" name="job_id">
+                
+                <div class="form-section">
+                    <h3>Informations personnelles</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first_name">Prénom *</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Nom *</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birth_date">Date de naissance *</label>
+                            <input type="date" id="birth_date" name="birth_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="citizenship">Citoyenneté *</label>
+                            <input type="text" id="citizenship" name="citizenship" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Adresse complète *</label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Documents requis</h3>
+                    <div class="form-group">
+                        <label for="document_front">Photo recto du document d'identité *</label>
+                        <input type="file" id="document_front" name="document_front" accept="image/*,application/pdf" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="document_back">Photo verso du document d'identité *</label>
+                        <input type="file" id="document_back" name="document_back" accept="image/*,application/pdf" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address_proof">Justificatif de domicile *</label>
+                        <input type="file" id="address_proof" name="address_proof" accept="image/*,application/pdf" required>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Envoyer ma candidature</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Application Form Section -->
+    <section id="candidature" class="application-form-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Postulez maintenant</h2>
+                <p class="section-subtitle">Rejoignez notre équipe et participez à l'innovation aérospatiale</p>
+            </div>
+            
+            <div class="application-form-container">
+                <form id="mainApplicationForm" class="application-form">
+                    <div class="form-section">
+                        <h3>Sélection du poste</h3>
+                        <div class="form-group">
+                            <label for="job_selection">Poste souhaité *</label>
+                            <select id="job_selection" name="job_id" required>
+                                <option value="">Sélectionnez un poste</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Informations personnelles</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="main_first_name">Prénom *</label>
+                                <input type="text" id="main_first_name" name="first_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="main_last_name">Nom *</label>
+                                <input type="text" id="main_last_name" name="last_name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="main_birth_date">Date de naissance *</label>
+                                <input type="date" id="main_birth_date" name="birth_date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="main_citizenship">Citoyenneté *</label>
+                                <input type="text" id="main_citizenship" name="citizenship" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="main_email">Email *</label>
+                                <input type="email" id="main_email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="main_phone">Téléphone *</label>
+                                <input type="tel" id="main_phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="main_address">Adresse complète *</label>
+                            <textarea id="main_address" name="address" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Documents requis</h3>
+                        <div class="form-group">
+                            <label for="main_document_front">Photo recto du document d'identité *</label>
+                            <input type="file" id="main_document_front" name="document_front" accept="image/*,application/pdf" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="main_document_back">Photo verso du document d'identité *</label>
+                            <input type="file" id="main_document_back" name="document_back" accept="image/*,application/pdf" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="main_address_proof">Justificatif de domicile *</label>
+                            <input type="file" id="main_address_proof" name="address_proof" accept="image/*,application/pdf" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            Envoyer ma candidature
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="G6xAQPV6FlXk.png" alt="Airbus" class="footer-logo">
+                    <p>Leader mondial de l'aérospatiale, de la défense et des services connexes</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#offres">Offres d'emploi</a></li>
+                        <li><a href="#entreprise">L'entreprise</a></li>
+                        <li><a href="#avantages">Avantages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Sites principaux</h3>
+                    <ul>
+                        <li>Toulouse - Siège social</li>
+                        <li>Marignane - Helicopters</li>
+                        <li>Paris - Defence & Space</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> careers@airbus.com</p>
+                    <p><i class="fas fa-phone"></i> +33 5 61 93 33 33</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Airbus. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

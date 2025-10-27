@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panneau d'Administration - Airbus RH</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal active">
+        <div class="modal-content login-modal">
+            <div class="login-header">
+                <img src="G6xAQPV6FlXk.png" alt="Airbus" class="login-logo">
+                <h2>Accès Administrateur RH</h2>
+                <p>Connectez-vous pour accéder au panneau d'administration</p>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Se connecter
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="dashboard hidden">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <img src="G6xAQPV6FlXk.png" alt="Airbus" class="header-logo">
+                    <h1>Panneau RH</h1>
+                </div>
+                <div class="header-right">
+                    <span class="user-info">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="admin-username">Admin</span>
+                    </span>
+                    <button class="btn btn-secondary" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Déconnexion
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="admin-nav">
+            <div class="nav-content">
+                <button class="nav-btn active" data-tab="dashboard">
+                    <i class="fas fa-chart-dashboard"></i> Tableau de bord
+                </button>
+                <button class="nav-btn" data-tab="applications">
+                    <i class="fas fa-file-alt"></i> Candidatures
+                </button>
+                <button class="nav-btn" data-tab="jobs">
+                    <i class="fas fa-briefcase"></i> Offres d'emploi
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Tab -->
+            <div id="dashboard-tab" class="tab-content active">
+                <div class="dashboard-header">
+                    <h2>Tableau de bord</h2>
+                    <p>Vue d'ensemble des candidatures et offres d'emploi</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="total-jobs">0</div>
+                            <div class="stat-label">Offres actives</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="total-applications">0</div>
+                            <div class="stat-label">Candidatures totales</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="pending-applications">0</div>
+                            <div class="stat-label">En attente</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="active-jobs">0</div>
+                            <div class="stat-label">Postes ouverts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Applications -->
+                <div class="dashboard-section">
+                    <h3>Candidatures récentes</h3>
+                    <div class="recent-applications" id="recent-applications">
+                        <!-- Applications will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications Tab -->
+            <div id="applications-tab" class="tab-content">
+                <div class="tab-header">
+                    <h2>Gestion des candidatures</h2>
+                    <div class="tab-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="applications-search" placeholder="Rechercher par nom, email...">
+                        </div>
+                        <select id="status-filter">
+                            <option value="">Tous les statuts</option>
+                            <option value="En attente">En attente</option>
+                            <option value="Accepté">Accepté</option>
+                            <option value="Refusé">Refusé</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="applications-list" id="applications-list">
+                    <!-- Applications will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Jobs Tab -->
+            <div id="jobs-tab" class="tab-content">
+                <div class="tab-header">
+                    <h2>Gestion des offres d'emploi</h2>
+                    <div class="tab-actions">
+                        <button class="btn btn-primary" onclick="openJobModal()">
+                            <i class="fas fa-plus"></i> Nouvelle offre
+                        </button>
+                    </div>
+                </div>
+
+                <div class="jobs-list" id="jobs-list">
+                    <!-- Jobs will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Application Detail Modal -->
+    <div id="application-modal" class="modal">
+        <div class="modal-content application-modal">
+            <div class="modal-header">
+                <h2>Détails de la candidature</h2>
+                <span class="close" onclick="closeApplicationModal()">&times;</span>
+            </div>
+            <div class="modal-body" id="application-details">
+                <!-- Application details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Modal -->
+    <div id="job-modal" class="modal">
+        <div class="modal-content job-modal">
+            <div class="modal-header">
+                <h2 id="job-modal-title">Nouvelle offre d'emploi</h2>
+                <span class="close" onclick="closeJobModal()">&times;</span>
+            </div>
+            <form id="job-form">
+                <input type="hidden" id="job-id" name="job_id">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="job-title">Titre du poste *</label>
+                        <input type="text" id="job-title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-location">Localisation *</label>
+                        <input type="text" id="job-location" name="location" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="job-department">Département *</label>
+                        <select id="job-department" name="department" required>
+                            <option value="">Sélectionner...</option>
+                            <option value="Ingénierie">Ingénierie</option>
+                            <option value="Production">Production</option>
+                            <option value="R&D">R&D</option>
+                            <option value="IT">IT</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Qualité">Qualité</option>
+                            <option value="Maintenance">Maintenance</option>
+                            <option value="Defence & Space">Defence & Space</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-contract">Type de contrat *</label>
+                        <select id="job-contract" name="contract_type" required>
+                            <option value="">Sélectionner...</option>
+                            <option value="CDI">CDI</option>
+                            <option value="CDD">CDD</option>
+                            <option value="Stage">Stage</option>
+                            <option value="Alternance">Alternance</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="job-experience">Niveau d'expérience *</label>
+                        <select id="job-experience" name="experience_level" required>
+                            <option value="">Sélectionner...</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Intermédiaire">Intermédiaire</option>
+                            <option value="Senior">Senior</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="job-salary">Fourchette salariale</label>
+                        <input type="text" id="job-salary" name="salary_range" placeholder="ex: 40,000 - 60,000 €">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="job-description">Description du poste *</label>
+                    <textarea id="job-description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="job-requirements">Exigences *</label>
+                    <textarea id="job-requirements" name="requirements" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="job-benefits">Avantages</label>
+                    <textarea id="job-benefits" name="benefits" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeJobModal()">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
+
